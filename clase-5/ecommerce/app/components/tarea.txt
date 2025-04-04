@@ -1,0 +1,1 @@
+Realizar division en componentes de App.js, ya estan creados, falta la logica
