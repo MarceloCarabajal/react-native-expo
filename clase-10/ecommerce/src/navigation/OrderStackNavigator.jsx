@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import OrdersTemp from '../screens/OrdersTemp'
+import OrdersTemp from '../screens/Orders'
 
 const Stack = createNativeStackNavigator()
 
@@ -9,11 +9,8 @@ const OrderStackNavigator = () => {
   return (
     <Stack.Navigator>
         <Stack.Screen
-            name="Order"
+            name="Orders"
             component={OrdersTemp}
-            options={{
-            headerShown: false,
-            }} 
         />
     </Stack.Navigator>
   )

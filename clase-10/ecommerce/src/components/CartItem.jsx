@@ -1,12 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
+import Entypo from '@expo/vector-icons/Entypo';
 
 const CartiItem = ({cartItem}) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.text}>{cartItem.title}</Text>
-      <Text style={styles.text}>{cartItem.price}</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>{cartItem.title}</Text>
+        <Text style={styles.text2}>{cartItem.brand}</Text>
+        <Text style={styles.text2}>{cartItem.price}</Text>
+      </View>
+      <Entypo name="trash" size={30} color="black" />
+      
     </View>
   )
 }
@@ -22,5 +28,22 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       borderWidth: 2,
       flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    textContainer: {
+      width: '70%',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+    },
+    text: {
+      fontFamily: 'Josefin',
+      fontSize: 20,
+      color: colors.teal400,
+    },
+    text2: {
+      fontFamily: 'Josefin',
+      fontSize: 16,
+      color: colors.teal600,
     },
 })

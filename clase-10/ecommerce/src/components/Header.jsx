@@ -2,12 +2,12 @@ import { StyleSheet, Text, useWindowDimensions, View } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 
-const Header = ({route}) => {
+const Header = ({route, navigation}) => {
   const { height, width } = useWindowDimensions();
   const { name } = route.name
   return (
     <View style={styles.container}>
-      <Text style={ width > 360 ? styles.text : styles.textSm}>{name}</Text>
+      <Text style={ width > 360 ? styles.text : styles.textSm}>{route.name}</Text>
     </View>
   )
 }
