@@ -16,10 +16,11 @@ const CategoryItem = ({
     dispatch(setCategorySelected(category))
     navigation.navigate("ItemListCategory", { category })
   }
+
   return (
     <Card style={{ marginVertical: 10, marginHorizontal: 10 }}>
       <Pressable 
-        onPress={() => navigation.navigate("ItemListCategory", { category })}
+        onPress={handleNavigate}
       >
         <Text style={styles.text}>{category}</Text>
       </Pressable>

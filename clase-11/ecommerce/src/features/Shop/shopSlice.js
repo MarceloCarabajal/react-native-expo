@@ -3,8 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 export const shopSlice = createSlice({
     name: "shop",
     initialState: {
-        categorySelected: "",
-        itemIdSelected: "",
+        value: {
+            categorySelected: "",
+            itemIdSelected: "",
+        }
     },
     reducers: {
         setCategorySelected: (state, action) => {
