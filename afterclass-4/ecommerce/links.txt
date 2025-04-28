@@ -1,0 +1,4 @@
+Chat google: https://gemini.google.com/
+Paletas de colores: https://colorhunt.co/palette/ffedfaffb8e0ec7fa9be5985
+Shadow: https://tools-network.com/react-native-shadow/react-native-box-shadow
+FlatList: https://reactnative.dev/docs/flatlist
