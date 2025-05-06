@@ -1,18 +1,32 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { colors } from '../global/colors'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InputForm from '../components/inputForm';
 import SubmitButton from '../components/submitButton';
 import { Pressable } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { useSignInMutation } from '../services/authService';
+import { setUser } from '../features/User/userSlice';
 
 const LoginScreen = ({navigation}) => {
+    const dispatch = useDispatch();
+    const [triggerSignIn, result] = useSignInMutation();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    const dispatch = useDispatch();
-    const [triggerSignIn, result] = useSignInMutation();
+    useEffect(() => {
+      if (result.isSuccess) {
+      //console.log("🕵🏻 ~ useEffect ~ result:", result);
+      dispatch(
+        setUser({
+          email: result.data.email,
+          idToken: result.data.idToken,
+        })
+      );
+    }
+  }, [result]); 
+
+
     // dispatch
     // triggerSignIn
     // useEffect
@@ -20,7 +34,7 @@ const LoginScreen = ({navigation}) => {
 
     const onSubmit = () => {
         // handle login logic here
-        // triggerSignIn({email, password, returnSecureToken: true})
+        triggerSignIn({email, password })
     };
 
     return (
