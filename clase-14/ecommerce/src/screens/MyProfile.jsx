@@ -1,0 +1,55 @@
+import { Button, Image, StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { useGetProfileImageQuery } from '../services/shopServices'
+
+const MyProfile = ({navigation}) => {
+
+    const {imageCamera, localId} = useSelector((state) => state.auth.value)
+    const {data: imageFromDB} = useGetProfileImageQuery(localId)
+
+    const launchCamera = () => {
+        navigation.navigate('Image Selector')
+    }
+
+    const defaultImage = require('../../assets/images/profile-default.jpg')
+  return (
+    <View style={styles.container}>
+        {imageFromDB || imageCamera ? 
+        (
+            <Image 
+                source={{ uri: imageFromDB?.image || imageCamera }}
+                style={styles.image}
+                resizeMode='cover'
+            />
+        ) 
+        : 
+        (
+            <Image 
+                source={defaultImage}
+                style={styles.image}
+                resizeMode='cover'
+            />
+        )
+        }
+        <Button title='Add picture profile' onPress={launchCamera} />
+    </View>
+  )
+}
+
+export default MyProfile
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 10,
+        gap: 15,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+    image: {
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+    }
+})
