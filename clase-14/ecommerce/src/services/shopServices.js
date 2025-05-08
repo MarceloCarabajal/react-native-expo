@@ -4,10 +4,10 @@ import { baseURL } from "../databases/realTimeDataBase";
 export const shopApi = createApi({
     reducerPath: 'shopApi',
     baseQuery: fetchBaseQuery({baseUrl: baseURL}),
-    tagTypes: ['profileImageGet'],
+    tagTypes: ['profileImageGet'], //declaro un tag
     endpoints: (builder) => ({
         getCategories: builder.query({
-            query: () => `categories.json`,
+            query: () => "categories.json",
         }),
         getProductsByCategory: builder.query({
             query: (category) => `products.json?orderBy="category"&equalTo="${category}"`,
@@ -35,10 +35,6 @@ export const shopApi = createApi({
         getProfileImage: builder.query({
             query: (localId) => `profileImages/${localId}.json`,
             providesTags: ['profileImageGet'],
-            transformResponse: (response) => {
-                if(response) return response.imageCamera
-                return null
-            }
         }),
         postProfileImage: builder.mutation({
             query: ({image, localId}) => ({

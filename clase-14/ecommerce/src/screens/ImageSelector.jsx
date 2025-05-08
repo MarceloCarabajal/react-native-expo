@@ -1,10 +1,11 @@
 import { Button, Image, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import { usePostProfileImageMutation } from '../services/shopServices'
-import { useDispatch, useSelector } from 'react-redux'
-import { colors } from '../global/colors'
 import * as ImagePiker from 'expo-image-picker'
+
+import { useDispatch, useSelector } from 'react-redux'
 import { setImageCamera } from '../features/User/userSlice'
+import { colors } from '../global/colors'
+import { usePostProfileImageMutation } from '../services/shopServices'
 
 const ImageSelector = ({navigation}) => {
 
@@ -23,7 +24,7 @@ const ImageSelector = ({navigation}) => {
             const permissionCamera = verifyCameraPermissions()
             if (permissionCamera){
                 let result = await ImagePiker.launchCameraAsync({
-                    mediaTypes: ImagePiker.MediaTypeOptions.All,
+                    mediaTypes: ["images"],
                     allowsEditing: true,
                     aspect: [1, 1],
                     base64: true,
@@ -57,9 +58,8 @@ const ImageSelector = ({navigation}) => {
         (
             <>
                 <Image 
-                source={{ uri: image }}
-                style={styles.image}
-                resizeMode='cover'
+                    source={{ uri: image }}
+                    style={styles.image}
                 />
                 <Button title='Take another photo' onPress={pickImage} />
                 <Button title='Confirm photo' onPress={confirmImage} />
@@ -68,19 +68,12 @@ const ImageSelector = ({navigation}) => {
         )
         : 
         (
-            <Image 
-                source={require('../../assets/images/profile-default.jpg')}
-                style={styles.image}
-                resizeMode='cover'
-            />
-        )
-        }
-        <View style={styles.noPhotoContainer}>
-        <Text>No photo to show</Text>
-        <Button title='Take a photo' onPress={pickImage} />
+            <View style={styles.noPhotoContainer}>
+                <Text>No photo to show</Text>
+                <Button title='Take a photo' onPress={pickImage} />
+            </View>
+        )}
     </View>
-    </View>
-    
   )
 }
 

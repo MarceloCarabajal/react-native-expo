@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React, {useEffect, useState} from 'react'
 import { colors } from '../global/colors';
+
 import InputForm from '../components/inputForm';
 import SubmitButton from '../components/submitButton';
-import { Pressable } from 'react-native';
+
 import { useDispatch } from 'react-redux';
 import { useSignUpMutation } from '../services/authService';
 import { signUpSchema } from '../validations/authSchema';
@@ -47,11 +48,6 @@ const SignupScreen = ({navigation}) => {
                         break;
                     case "password":
                         setErrorPassword(err.message)
-                        break;
-                    case "confirmPassword":
-                        setErrorConfirmPassword(err.message)
-                        break;
-                    default:
                         break;
                 }
             }           
