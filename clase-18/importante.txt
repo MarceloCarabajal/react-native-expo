@@ -1,0 +1,21 @@
+- Tener en cuenta:
+A este proyecto tuve que moverlo a una carpeta mas cerca de C: ya que al querer ejecutar algunos comandos, como npx expo run:android, ya que se encontraba en una carpeta muy interna y eso genera conflictos (por mas que haya editado el regedit)
+
+- instalación expo dev client:
+1) npx expo install expo-dev-client
+2) npx expo prebuild --platform android o npx expo prebuild --platform ios (dependiendo dispositivo que usemos, ios solo podremos en una mac)
+3) npx expo run:android
+4) npx expo export --platform web
+5) npx expo start y verificar que web este instalado
+
+- instalación netlify:
+1) npm install -g netlify-cli
+2) netlify deploy
+3) pruebo en el enlace que me brinda si esta todo ok, antes de hacerlo productivo.
+4) Si esta todo ok, ejecuto: netlify deploy --prod
+5)
+
+- instalación eas
+1) npm install -g eas-cli
+2) eas login
+3) eas build:configure
