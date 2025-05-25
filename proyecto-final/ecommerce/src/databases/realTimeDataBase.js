@@ -1,0 +1,1 @@
+export const baseURL = process.env.EXPO_PUBLIC_REALTIME_DATABASE_URL

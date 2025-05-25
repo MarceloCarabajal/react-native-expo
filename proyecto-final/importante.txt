@@ -1,0 +1,36 @@
+- Tener en cuenta esta docu:
+https://docs.expo.dev/tutorial/eas/configure-development-build/
+
+- Aclaracion
+A este proyecto tuve que moverlo a una carpeta mas cerca de C: ya que al querer ejecutar algunos comandos, como npx expo run:android, ya que se encontraba en una carpeta muy interna y eso genera conflictos (por mas que haya editado el regedit).
+Tambien crear en la carpeta android: local.properties
+con la siguiente configuración (adaptando a lo que estemos utilizando):
+sdk.dir=C:\\Users\\marce\\AppData\\Local\\Android\\Sdk
+ndk.dir=C:\\Users\\marce\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973
+
+
+- instalación expo dev client:
+1) npx expo install expo-dev-client
+2) npx expo prebuild --platform android o npx expo prebuild --platform ios (dependiendo dispositivo que usemos, ios solo podremos en una mac)
+3) npx expo run:android
+4) npx expo export --platform web
+5) npx expo start y verificar que web este instalado
+
+- instalación netlify:
+1) npm install -g netlify-cli
+2) netlify deploy
+3) pruebo en el enlace que me brinda si esta todo ok, antes de hacerlo productivo.
+4) Si esta todo ok, ejecuto: netlify deploy --prod
+5)
+
+- instalación eas
+1) npm install -g eas-cli
+2) eas login
+3) eas build:configure
+(ver desde 1:30 h el video, ya que tiene que estar dentro de una carpeta que ya tenga .git, asi no creo otra innecesariamente)
+4) eas build - android --profile preview
+5) generate a new Android Keystore? yes
+6) builds details, se puede descargar por qr o desde la web de expo
+
+- Generación bundle en vez de apk
+1) eas build --platform android
