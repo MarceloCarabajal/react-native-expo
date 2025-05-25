@@ -1,4 +1,7 @@
-- Tener en cuenta:
+- Tener en cuenta esta docu:
+https://docs.expo.dev/tutorial/eas/configure-development-build/
+
+- Aclaracion
 A este proyecto tuve que moverlo a una carpeta mas cerca de C: ya que al querer ejecutar algunos comandos, como npx expo run:android, ya que se encontraba en una carpeta muy interna y eso genera conflictos (por mas que haya editado el regedit)
 
 - instalación expo dev client:
@@ -19,3 +22,10 @@ A este proyecto tuve que moverlo a una carpeta mas cerca de C: ya que al querer 
 1) npm install -g eas-cli
 2) eas login
 3) eas build:configure
+(ver desde 1:30 h el video, ya que tiene que estar dentro de una carpeta que ya tenga .git, asi no creo otra innecesariamente)
+4) eas build - android --profile preview
+5) generate a new Android Keystore? yes
+6) builds details, se puede descargar por qr o desde la web de expo
+
+- Generación bundle en vez de apk
+1) eas build --platform android
