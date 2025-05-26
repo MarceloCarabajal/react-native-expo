@@ -8,7 +8,11 @@ const OrderItem = ({ order }) => {
     <View style={styles.card} onPress={() => {}}>
         <View style={styles.textContainer}>
             <Text style={styles.text}>{new Date(order.createdAt).toLocaleString()}</Text>
-            <Text style={styles.text}>{order.total}</Text>
+            <Text style={styles.text}>{order.total.toLocaleString('es-AR', {
+                style: 'currency',
+                currency: 'ARS'
+                })}
+            </Text>
         </View>
         <FontAwesome name="search" size={24} color="black" />
     </View>

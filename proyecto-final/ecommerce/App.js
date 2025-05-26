@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from './src/store';
 import { useSession } from './src/hooks/useSession';
 // import { useDb } from './src/hooks/useDb';
+import Toast from 'react-native-toast-message';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
       <SafeAreaView style={styles.container}>
       <Provider store={store}>
         <Navigator />
+        <Toast />
       </Provider>
       </SafeAreaView>
     );

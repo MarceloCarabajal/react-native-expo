@@ -63,7 +63,7 @@ const CartScreen = ({ navigation }) => {
             onPress={onConfirmOrder}
             disabled={CartData.length === 0}
           >
-            <Text style={styles.checkoutButtonText}>CHECKOUT</Text>
+            <Text style={styles.checkoutButtonText}>Checkout</Text>
           </Pressable>
         )}
       </View>

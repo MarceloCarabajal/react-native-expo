@@ -1,4 +1,4 @@
-import { Button, Image, StyleSheet, Text, View, useWindowDimensions } from 'react-native'
+import { Button, Image, StyleSheet, Text, View, useWindowDimensions, Pressable } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useGetProductByIdQuery } from '../services/shopServices';
 // import allProducts from '../data/products.json'
@@ -6,6 +6,7 @@ import { addToCart } from '../features/Cart/cartSlice';
 import { useDispatch } from 'react-redux';
 import { ActivityIndicator } from 'react-native';
 import { colors } from '../global/colors';
+import Toast from 'react-native-toast-message';
 
 const ItemDetail = ({ navigation, route }) => {
 
@@ -36,6 +37,14 @@ if (error) {
   const handleAddToCart = () => {
     // enviar el producto a la porcion de estado del cart
     dispatch(addToCart({...product, quantity}))
+    //Alert o tast para confirmar que se agregó al carrito
+    Toast.show({
+      type: 'success',
+      text1: 'Producto agregado al carrito',
+      text2: `${product.title} x ${quantity} unidades`,
+      position: 'bottom',
+      visibilityTime: 2000,
+    });
   }
 
   const increaseQuantity = () => {
@@ -79,10 +88,14 @@ if (error) {
             <Text style={styles.description}>{product.description}</Text>
             <Text style={styles.price}>{`$${product.price}`}</Text>
             <Button title="Add to cart" color={colors.teal600} onPress={handleAddToCart} />
-            <View style={{ flexDirection: "row", alignItems: "center", marginTop: 10 }}>
-              <Button title="-" onPress={decreaseQuantity} />
-              <Text style={{ marginHorizontal: 10 }}>{quantity}</Text>
-              <Button title="+" onPress={increaseQuantity} />
+            <View style={ styles.quantityContainer}>
+              <Pressable onPress={decreaseQuantity} style={styles.quantityButton}>
+                <Text style={styles.quantityButtonText}>−</Text>
+              </Pressable>
+              <Text style={styles.quantityText}>{quantity}</Text>
+              <Pressable onPress={increaseQuantity} style={styles.quantityButton}>
+                <Text style={styles.quantityButtonText}>+</Text>
+              </Pressable>
             </View>
           </View>
         </View>
@@ -148,5 +161,27 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginVertical: 10,
     color: colors.teal400,
-  }
+  },
+  quantityContainer: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginTop: 10,
+},
+quantityButton: {
+  backgroundColor: colors.teal600,
+  paddingHorizontal: 12,
+  paddingVertical: 5,
+  borderRadius: 5,
+  marginHorizontal: 5,
+},
+quantityButtonText: {
+  color: "white",
+  fontSize: 20,
+  fontWeight: "bold",
+},
+quantityText: {
+  fontSize: 18,
+  fontWeight: "bold",
+  color: colors.teal900,
+},
 });
