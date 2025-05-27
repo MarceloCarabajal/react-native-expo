@@ -40,8 +40,8 @@ if (error) {
     //Alert o tast para confirmar que se agregó al carrito
     Toast.show({
       type: 'success',
-      text1: 'Producto agregado al carrito',
-      text2: `${product.title} x ${quantity} unidades`,
+      text1: 'Product added to cart',
+      text2: `${product.title} x ${quantity} units`,
       position: 'bottom',
       visibilityTime: 2000,
     });
@@ -60,7 +60,7 @@ if (error) {
   return (
     <>
       <Button
-        title='Volver'
+        title='Back'
         color={colors.teal400}
         onPress={() => navigation.goBack()}
       />

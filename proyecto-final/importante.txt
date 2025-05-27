@@ -34,3 +34,5 @@ ndk.dir=C:\\Users\\marce\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973
 
 - Generación bundle en vez de apk
 1) eas build --platform android
+
+Tambien recordar de pasar las credenciales que están en el .env

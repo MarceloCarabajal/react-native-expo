@@ -24,9 +24,9 @@ const CartScreen = ({ navigation }) => {
         createdAt: new Date().toISOString(),
       }).unwrap()
       dispatch(clearCart())
-      Alert.alert('¡Pedido confirmado!', 'Tu orden fue enviada con éxito.')
+      Alert.alert('Order confirmed!', 'Your order was sent successfully.')
     } catch (err) {
-      Alert.alert('Error', 'No se pudo confirmar el pedido.')
+      Alert.alert('Error', 'The order could not be confirmed.')
     } finally {
       setIsConfirming(false)
     }
@@ -36,7 +36,7 @@ const CartScreen = ({ navigation }) => {
     <View style={styles.container}>
       {CartData.length === 0 && (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{ fontSize: 18, color: colors.teal600 }}>No hay productos en el carrito</Text>
+          <Text style={{ fontSize: 18, color: colors.teal600 }}>There are no products in the cart</Text>
         </View>
       )}
       <FlatList 

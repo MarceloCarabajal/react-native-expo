@@ -1,21 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { colors } from '../global/colors';
 
-const OrderItem = ({ order }) => {
+const OrderItem = ({ order, onPress }) => {
   return (
-    <View style={styles.card} onPress={() => {}}>
+    <Pressable style={styles.card} onPress={onPress}>
         <View style={styles.textContainer}>
-            <Text style={styles.text}>{new Date(order.createdAt).toLocaleString()}</Text>
-            <Text style={styles.text}>{order.total.toLocaleString('es-AR', {
-                style: 'currency',
-                currency: 'ARS'
+            <Text style={styles.text}>
+                {new Date(order.createdAt).toLocaleString()}
+            </Text>
+            <Text style={styles.text}>
+                {order.total.toLocaleString('es-AR', {
+                    style: 'currency',
+                    currency: 'ARS'
                 })}
             </Text>
         </View>
         <FontAwesome name="search" size={24} color="black" />
-    </View>
+    </Pressable>
   )
 }
 

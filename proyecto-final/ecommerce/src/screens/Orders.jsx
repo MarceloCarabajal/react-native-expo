@@ -5,7 +5,7 @@ import OrderItem from '../components/OrderItem'
 import { useSelector } from 'react-redux'
 import { useGetOrdersQuery } from '../services/shopServices'
 
-const OrdersScreen = () => {
+const OrdersScreen = ({ navigation }) => {
   const { localId } = useSelector((state) => state.auth.value)
   const { data: OrdersData, isLoading, isSuccess } = useGetOrdersQuery()
   const [ordersFiltered, setOrdersFiltered] = useState()
@@ -25,7 +25,7 @@ const OrdersScreen = () => {
       <FlatList 
         data={ordersFiltered}
         renderItem={({ item }) => {
-          return <OrderItem order={item} />
+          return <OrderItem order={item} onPress={() => navigation.navigate("OrderDetail", {order: item })} />
         }}
       />
     </View>

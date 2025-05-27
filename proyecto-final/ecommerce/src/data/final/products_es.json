@@ -1,0 +1,1172 @@
+[
+  {
+    "id": 1,
+    "title": "Camiseta Croacia 1998 Local",
+    "description": "Camiseta oficial de Croacia temporada 1998, categoría local. Marca Nike.",
+    "category": "selecciones-nacionales",
+    "price": 102.49,
+    "discountPercentage": 12,
+    "rating": 4.01,
+    "stock": 46,
+    "tags": [
+      "croacia",
+      "local",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "CRO1998LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "3493879965148",
+      "qrCode": "https://mi-tienda.com/qr/cro1998loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/cro1998loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/cro1998loc-thumb.png"
+  },
+  {
+    "id": 2,
+    "title": "Retro Camiseta FC Barcelona 1998 Alternativa",
+    "description": "Camiseta oficial de FC Barcelona temporada 1998, categoría alternativa. Marca Nike.",
+    "category": "camisetas-retro",
+    "price": 70.94,
+    "discountPercentage": 17,
+    "rating": 3.51,
+    "stock": 59,
+    "tags": [
+      "fc-barcelona",
+      "alternativa",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "FC1998ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "6665691867900",
+      "qrCode": "https://mi-tienda.com/qr/fc1998alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/fc1998alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/fc1998alt-thumb.png"
+  },
+  {
+    "id": 3,
+    "title": "Retro Camiseta Colombia 1978 Alternativa",
+    "description": "Camiseta oficial de Colombia temporada 1978, categoría alternativa. Marca Adidas.",
+    "category": "camisetas-retro",
+    "price": 91.25,
+    "discountPercentage": 15,
+    "rating": 4.14,
+    "stock": 79,
+    "tags": [
+      "colombia",
+      "alternativa",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "COL1978ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "9292436935611",
+      "qrCode": "https://mi-tienda.com/qr/col1978alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/col1978alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/col1978alt-thumb.png"
+  },
+  {
+    "id": 4,
+    "title": "Camiseta AC Milan 1978 Visitante",
+    "description": "Camiseta oficial de AC Milan temporada 1978, categoría visitante. Marca Puma.",
+    "category": "selecciones-nacionales",
+    "price": 78.8,
+    "discountPercentage": 6,
+    "rating": 4.55,
+    "stock": 64,
+    "tags": [
+      "ac-milan",
+      "visitante",
+      "puma"
+    ],
+    "brand": "Puma",
+    "sku": "AC1978VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "2493966301065",
+      "qrCode": "https://mi-tienda.com/qr/ac1978vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/ac1978vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/ac1978vis-thumb.png"
+  },
+  {
+    "id": 5,
+    "title": "Camiseta Real Madrid 1998 Local",
+    "description": "Camiseta oficial de Real Madrid temporada 1998, categoría local. Marca Adidas.",
+    "category": "clubes-europeos",
+    "price": 98.13,
+    "discountPercentage": 14,
+    "rating": 4.06,
+    "stock": 16,
+    "tags": [
+      "real-madrid",
+      "local",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "REA1998LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "1810763777619",
+      "qrCode": "https://mi-tienda.com/qr/rea1998loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/rea1998loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/rea1998loc-thumb.png"
+  },
+  {
+    "id": 6,
+    "title": "Camiseta FC Barcelona 1978 Visitante",
+    "description": "Camiseta oficial de FC Barcelona temporada 1978, categoría visitante. Marca Nike.",
+    "category": "clubes-sudamericanos",
+    "price": 108.97,
+    "discountPercentage": 19,
+    "rating": 3.59,
+    "stock": 13,
+    "tags": [
+      "fc-barcelona",
+      "visitante",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "FC1978VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "3895417862661",
+      "qrCode": "https://mi-tienda.com/qr/fc1978vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/fc1978vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/fc1978vis-thumb.png"
+  },
+  {
+    "id": 7,
+    "title": "Retro Camiseta Alemania 2006 Local",
+    "description": "Camiseta oficial de Alemania temporada 2006, categoría local. Marca Adidas.",
+    "category": "camisetas-retro",
+    "price": 93.43,
+    "discountPercentage": 20,
+    "rating": 4.02,
+    "stock": 31,
+    "tags": [
+      "alemania",
+      "local",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "ALE2006LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "9864912350286",
+      "qrCode": "https://mi-tienda.com/qr/ale2006loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/ale2006loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/ale2006loc-thumb.png"
+  },
+  {
+    "id": 8,
+    "title": "Camiseta Croacia 2024 Visitante",
+    "description": "Camiseta oficial de Croacia temporada 2024, categoría visitante. Marca Nike.",
+    "category": "clubes-sudamericanos",
+    "price": 99.64,
+    "discountPercentage": 6,
+    "rating": 4.95,
+    "stock": 36,
+    "tags": [
+      "croacia",
+      "visitante",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "CRO2024VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "6374213318514",
+      "qrCode": "https://mi-tienda.com/qr/cro2024vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/cro2024vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/cro2024vis-thumb.png"
+  },
+  {
+    "id": 9,
+    "title": "Retro Camiseta España 1978 Visitante",
+    "description": "Camiseta oficial de España temporada 1978, categoría visitante. Marca Adidas.",
+    "category": "camisetas-retro",
+    "price": 81.9,
+    "discountPercentage": 16,
+    "rating": 3.6,
+    "stock": 52,
+    "tags": [
+      "españa",
+      "visitante",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "ESP1978VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "3964233707294",
+      "qrCode": "https://mi-tienda.com/qr/esp1978vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/esp1978vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/esp1978vis-thumb.png"
+  },
+  {
+    "id": 10,
+    "title": "Retro Camiseta Croacia 1978 Local",
+    "description": "Camiseta oficial de Croacia temporada 1978, categoría local. Marca Nike.",
+    "category": "camisetas-retro",
+    "price": 88.27,
+    "discountPercentage": 12,
+    "rating": 4.5,
+    "stock": 17,
+    "tags": [
+      "croacia",
+      "local",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "CRO1978LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "9465941960617",
+      "qrCode": "https://mi-tienda.com/qr/cro1978loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/cro1978loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/cro1978loc-thumb.png"
+  },
+  {
+    "id": 11,
+    "title": "Retro Camiseta AC Milan 2022 Visitante",
+    "description": "Camiseta oficial de AC Milan temporada 2022, categoría visitante. Marca Puma.",
+    "category": "camisetas-retro",
+    "price": 74.43,
+    "discountPercentage": 10,
+    "rating": 4.07,
+    "stock": 32,
+    "tags": [
+      "ac-milan",
+      "visitante",
+      "puma"
+    ],
+    "brand": "Puma",
+    "sku": "AC2022VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "8561688259528",
+      "qrCode": "https://mi-tienda.com/qr/ac2022vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/ac2022vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/ac2022vis-thumb.png"
+  },
+  {
+    "id": 12,
+    "title": "Camiseta Colombia 2006 Local",
+    "description": "Camiseta oficial de Colombia temporada 2006, categoría local. Marca Adidas.",
+    "category": "clubes-europeos",
+    "price": 106.86,
+    "discountPercentage": 8,
+    "rating": 4.89,
+    "stock": 79,
+    "tags": [
+      "colombia",
+      "local",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "COL2006LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "6362907617397",
+      "qrCode": "https://mi-tienda.com/qr/col2006loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/col2006loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/col2006loc-thumb.png"
+  },
+  {
+    "id": 13,
+    "title": "Camiseta Colombia 2022 Local",
+    "description": "Camiseta oficial de Colombia temporada 2022, categoría local. Marca Adidas.",
+    "category": "selecciones-nacionales",
+    "price": 72.16,
+    "discountPercentage": 15,
+    "rating": 4.33,
+    "stock": 92,
+    "tags": [
+      "colombia",
+      "local",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "COL2022LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "3418321983023",
+      "qrCode": "https://mi-tienda.com/qr/col2022loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/col2022loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/col2022loc-thumb.png"
+  },
+  {
+    "id": 14,
+    "title": "Camiseta Brasil 2024 Alternativa",
+    "description": "Camiseta oficial de Brasil temporada 2024, categoría alternativa. Marca Puma.",
+    "category": "clubes-sudamericanos",
+    "price": 106.61,
+    "discountPercentage": 5,
+    "rating": 4.68,
+    "stock": 86,
+    "tags": [
+      "brasil",
+      "alternativa",
+      "puma"
+    ],
+    "brand": "Puma",
+    "sku": "BRA2024ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "8305071827599",
+      "qrCode": "https://mi-tienda.com/qr/bra2024alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/bra2024alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/bra2024alt-thumb.png"
+  },
+  {
+    "id": 15,
+    "title": "Camiseta Francia 2022 Local",
+    "description": "Camiseta oficial de Francia temporada 2022, categoría local. Marca Nike.",
+    "category": "clubes-sudamericanos",
+    "price": 93.61,
+    "discountPercentage": 14,
+    "rating": 4.04,
+    "stock": 10,
+    "tags": [
+      "francia",
+      "local",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "FRA2022LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "3840697596950",
+      "qrCode": "https://mi-tienda.com/qr/fra2022loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/fra2022loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/fra2022loc-thumb.png"
+  },
+  {
+    "id": 16,
+    "title": "Retro Camiseta Brasil 1978 Visitante",
+    "description": "Camiseta oficial de Brasil temporada 1978, categoría visitante. Marca Puma.",
+    "category": "camisetas-retro",
+    "price": 78.01,
+    "discountPercentage": 9,
+    "rating": 4.07,
+    "stock": 62,
+    "tags": [
+      "brasil",
+      "visitante",
+      "puma"
+    ],
+    "brand": "Puma",
+    "sku": "BRA1978VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "6456799172201",
+      "qrCode": "https://mi-tienda.com/qr/bra1978vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/bra1978vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/bra1978vis-thumb.png"
+  },
+  {
+    "id": 17,
+    "title": "Camiseta AC Milan 1998 Alternativa",
+    "description": "Camiseta oficial de AC Milan temporada 1998, categoría alternativa. Marca Puma.",
+    "category": "kits-de-arquero",
+    "price": 72.15,
+    "discountPercentage": 19,
+    "rating": 4.13,
+    "stock": 39,
+    "tags": [
+      "ac-milan",
+      "alternativa",
+      "puma"
+    ],
+    "brand": "Puma",
+    "sku": "AC1998ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "1768883284081",
+      "qrCode": "https://mi-tienda.com/qr/ac1998alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/ac1998alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/ac1998alt-thumb.png"
+  },
+  {
+    "id": 18,
+    "title": "Camiseta Inter de Milán 2006 Alternativa",
+    "description": "Camiseta oficial de Inter de Milán temporada 2006, categoría alternativa. Marca Nike.",
+    "category": "clubes-sudamericanos",
+    "price": 92.7,
+    "discountPercentage": 7,
+    "rating": 4.82,
+    "stock": 85,
+    "tags": [
+      "inter-de-milán",
+      "alternativa",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "INT2006ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "6634728050823",
+      "qrCode": "https://mi-tienda.com/qr/int2006alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/int2006alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/int2006alt-thumb.png"
+  },
+  {
+    "id": 19,
+    "title": "Camiseta Chelsea 2022 Alternativa",
+    "description": "Camiseta oficial de Chelsea temporada 2022, categoría alternativa. Marca Nike.",
+    "category": "clubes-sudamericanos",
+    "price": 70.48,
+    "discountPercentage": 7,
+    "rating": 3.6,
+    "stock": 44,
+    "tags": [
+      "chelsea",
+      "alternativa",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "CHE2022ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "4879515906143",
+      "qrCode": "https://mi-tienda.com/qr/che2022alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/che2022alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/che2022alt-thumb.png"
+  },
+  {
+    "id": 20,
+    "title": "Camiseta Real Madrid 2006 Alternativa",
+    "description": "Camiseta oficial de Real Madrid temporada 2006, categoría alternativa. Marca Adidas.",
+    "category": "kits-de-entrenamiento",
+    "price": 102.34,
+    "discountPercentage": 20,
+    "rating": 3.65,
+    "stock": 69,
+    "tags": [
+      "real-madrid",
+      "alternativa",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "REA2006ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "8621828323419",
+      "qrCode": "https://mi-tienda.com/qr/rea2006alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/rea2006alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/rea2006alt-thumb.png"
+  },
+  {
+    "id": 21,
+    "title": "Camiseta Argentina 1998 Alternativa",
+    "description": "Camiseta oficial de Argentina temporada 1998, categoría alternativa. Marca Adidas.",
+    "category": "selecciones-nacionales",
+    "price": 80.97,
+    "discountPercentage": 7,
+    "rating": 4.27,
+    "stock": 48,
+    "tags": [
+      "argentina",
+      "alternativa",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "ARG1998ALT",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "5159965792120",
+      "qrCode": "https://mi-tienda.com/qr/arg1998alt"
+    },
+    "images": [
+      "https://mi-tienda.com/images/arg1998alt.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/arg1998alt-thumb.png"
+  },
+  {
+    "id": 22,
+    "title": "Camiseta España 2024 Local",
+    "description": "Camiseta oficial de España temporada 2024, categoría local. Marca Adidas.",
+    "category": "clubes-sudamericanos",
+    "price": 85.55,
+    "discountPercentage": 10,
+    "rating": 4.69,
+    "stock": 53,
+    "tags": [
+      "españa",
+      "local",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "ESP2024LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "7490552829980",
+      "qrCode": "https://mi-tienda.com/qr/esp2024loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/esp2024loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/esp2024loc-thumb.png"
+  },
+  {
+    "id": 23,
+    "title": "Camiseta Chile 2006 Visitante",
+    "description": "Camiseta oficial de Chile temporada 2006, categoría visitante. Marca Puma.",
+    "category": "selecciones-nacionales",
+    "price": 82.13,
+    "discountPercentage": 10,
+    "rating": 4.22,
+    "stock": 68,
+    "tags": [
+      "chile",
+      "visitante",
+      "puma"
+    ],
+    "brand": "Puma",
+    "sku": "CHI2006VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "6898335701642",
+      "qrCode": "https://mi-tienda.com/qr/chi2006vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/chi2006vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/chi2006vis-thumb.png"
+  },
+  {
+    "id": 24,
+    "title": "Camiseta FC Barcelona 2023 Local",
+    "description": "Camiseta oficial de FC Barcelona temporada 2023, categoría local. Marca Nike.",
+    "category": "kits-de-arquero",
+    "price": 95.31,
+    "discountPercentage": 19,
+    "rating": 4.42,
+    "stock": 48,
+    "tags": [
+      "fc-barcelona",
+      "local",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "FC2023LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "3477363337461",
+      "qrCode": "https://mi-tienda.com/qr/fc2023loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/fc2023loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/fc2023loc-thumb.png"
+  },
+  {
+    "id": 25,
+    "title": "Camiseta Colombia 2023 Visitante",
+    "description": "Camiseta oficial de Colombia temporada 2023, categoría visitante. Marca Adidas.",
+    "category": "selecciones-nacionales",
+    "price": 84.7,
+    "discountPercentage": 6,
+    "rating": 4.36,
+    "stock": 71,
+    "tags": [
+      "colombia",
+      "visitante",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "COL2023VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "6852876327798",
+      "qrCode": "https://mi-tienda.com/qr/col2023vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/col2023vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/col2023vis-thumb.png"
+  },
+  {
+    "id": 26,
+    "title": "Camiseta Chelsea 2023 Visitante",
+    "description": "Camiseta oficial de Chelsea temporada 2023, categoría visitante. Marca Nike.",
+    "category": "clubes-europeos",
+    "price": 97.81,
+    "discountPercentage": 19,
+    "rating": 3.87,
+    "stock": 12,
+    "tags": [
+      "chelsea",
+      "visitante",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "CHE2023VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "1354468768295",
+      "qrCode": "https://mi-tienda.com/qr/che2023vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/che2023vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/che2023vis-thumb.png"
+  },
+  {
+    "id": 27,
+    "title": "Camiseta España 1998 Local",
+    "description": "Camiseta oficial de España temporada 1998, categoría local. Marca Adidas.",
+    "category": "clubes-europeos",
+    "price": 101.52,
+    "discountPercentage": 15,
+    "rating": 3.76,
+    "stock": 29,
+    "tags": [
+      "españa",
+      "local",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "ESP1998LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "2064565122323",
+      "qrCode": "https://mi-tienda.com/qr/esp1998loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/esp1998loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/esp1998loc-thumb.png"
+  },
+  {
+    "id": 28,
+    "title": "Camiseta Manchester United 2022 Visitante",
+    "description": "Camiseta oficial de Manchester United temporada 2022, categoría visitante. Marca Adidas.",
+    "category": "clubes-europeos",
+    "price": 100.36,
+    "discountPercentage": 10,
+    "rating": 4.94,
+    "stock": 45,
+    "tags": [
+      "manchester-united",
+      "visitante",
+      "adidas"
+    ],
+    "brand": "Adidas",
+    "sku": "MAN2022VIS",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "2685923093156",
+      "qrCode": "https://mi-tienda.com/qr/man2022vis"
+    },
+    "images": [
+      "https://mi-tienda.com/images/man2022vis.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/man2022vis-thumb.png"
+  },
+  {
+    "id": 29,
+    "title": "Camiseta Francia 2006 Local",
+    "description": "Camiseta oficial de Francia temporada 2006, categoría local. Marca Nike.",
+    "category": "selecciones-nacionales",
+    "price": 85.58,
+    "discountPercentage": 10,
+    "rating": 4.5,
+    "stock": 60,
+    "tags": [
+      "francia",
+      "local",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "FRA2006LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "7217258544577",
+      "qrCode": "https://mi-tienda.com/qr/fra2006loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/fra2006loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/fra2006loc-thumb.png"
+  },
+  {
+    "id": 30,
+    "title": "Retro Camiseta Francia 1998 Local",
+    "description": "Camiseta oficial de Francia temporada 1998, categoría local. Marca Nike.",
+    "category": "camisetas-retro",
+    "price": 107.97,
+    "discountPercentage": 6,
+    "rating": 3.62,
+    "stock": 48,
+    "tags": [
+      "francia",
+      "local",
+      "nike"
+    ],
+    "brand": "Nike",
+    "sku": "FRA1998LOC",
+    "weight": 0.3,
+    "dimensions": {
+      "width": 30,
+      "height": 40,
+      "depth": 2
+    },
+    "warrantyInformation": "30 días de garantía",
+    "shippingInformation": "Envío en 3 días hábiles",
+    "availabilityStatus": "In Stock",
+    "reviews": [],
+    "returnPolicy": "Devolución dentro de 15 días",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-05-27T14:23:34.832586",
+      "updatedAt": "2025-05-27T14:23:34.832586",
+      "barcode": "3894873404204",
+      "qrCode": "https://mi-tienda.com/qr/fra1998loc"
+    },
+    "images": [
+      "https://mi-tienda.com/images/fra1998loc.png"
+    ],
+    "thumbnail": "https://mi-tienda.com/images/fra1998loc-thumb.png"
+  }
+]

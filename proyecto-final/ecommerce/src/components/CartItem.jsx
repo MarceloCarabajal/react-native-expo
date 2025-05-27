@@ -57,7 +57,7 @@ export default CartiItem
 
 const styles = StyleSheet.create({
     card: {
-      height: 150,
+      height: 200,
       backgroundColor: colors.platinum,
       padding: 10,
       margin: 10,
