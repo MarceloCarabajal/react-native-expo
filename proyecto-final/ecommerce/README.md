@@ -63,6 +63,7 @@ EXPO_PUBLIC_FIREBAE_AUTH_URL=https://identitytoolkit.googleapis.com/v1
 # Firebase Realtime Database
 EXPO_PUBLIC_REALTIME_DATABASE_URL=https://<project>.firebaseio.com/
 
+```
 
 ## 📦 Instalación y Puesta en Marcha
 
@@ -72,16 +73,22 @@ EXPO_PUBLIC_REALTIME_DATABASE_URL=https://<project>.firebaseio.com/
 git clone https://github.com/MarceloCarabajal/react-native-expo.git
 cd proyecto-final
 cd ecommerce
+```
 
 ### 2. Instalar dependencias
 
+```
 npm install
+```
 
 ### 3. Agregar el archivo .env
 Creá un archivo .env en la raíz con las claves necesarias (ver sección anterior).
 
 ### 4. Ejecutar el proyecto
+
+```
 npx expo start
+```
 
 Abrí Expo Go en tu dispositivo o ejecutá en emulador.
 
@@ -111,5 +118,5 @@ Marcelo Carabajal
 Proyecto desarrollado como práctica profesional de React Native, Firebase y Redux.
 
 📄 Licencia
-© 2025
+Marcelo Carabajal © 2025
 
