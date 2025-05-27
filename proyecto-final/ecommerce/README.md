@@ -94,6 +94,7 @@ Abrí Expo Go en tu dispositivo o ejecutá en emulador.
 
 📁 Estructura del Proyecto
 
+```
 ├── components/         → UI reutilizable (cards, map, etc.)
 ├── databases/          → Claves externas (API Maps)
 ├── features/           → Redux slices y lógica de estado
@@ -103,6 +104,7 @@ Abrí Expo Go en tu dispositivo o ejecutá en emulador.
 ├── assets/             → Imágenes, fuentes
 ├── .env                → Variables de entorno
 └── App.js
+```
 
 📚 Pendientes / Futuras mejoras
 🔐 Autenticación con Firebase Auth (completa)
