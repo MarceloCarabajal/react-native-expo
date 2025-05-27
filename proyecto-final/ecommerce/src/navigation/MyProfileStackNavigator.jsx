@@ -11,12 +11,12 @@ const Stack = createNativeStackNavigator()
 const MyProfileStackNavigator = () => {
   return (
     <Stack.Navigator
-        initialRouteName="My Profile"
+        initialRouteName="My Profile Home"
         screenOptions={{
             headerShown: false,
         }}
     >
-      <Stack.Screen name="My Profile" component={MyProfile} />
+      <Stack.Screen name="My Profile Home" component={MyProfile} />
       <Stack.Screen name='Image Selector' component={ImageSelector} />
       <Stack.Screen name='List Address' component={ListAddress} />
       <Stack.Screen name='Location Selector' component={LocationSelector} />

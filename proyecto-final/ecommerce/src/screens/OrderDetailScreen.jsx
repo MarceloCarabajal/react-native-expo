@@ -8,8 +8,8 @@ const OrderDetailScreen = ({ route, navigation }) => {
       const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
       <Text style={styles.itemTitle}>{item.title}</Text>
-      <Text style={styles.itemText}>Cantidad: {item.quantity}</Text>
-      <Text style={styles.itemText}>Precio unitario: {item.price.toLocaleString('es-AR', {
+      <Text style={styles.itemText}>Quantity: {item.quantity}</Text>
+      <Text style={styles.itemText}>Unit Price: {item.price.toLocaleString('es-AR', {
         style: 'currency',
         currency: 'ARS',
       })}</Text>
@@ -25,13 +25,13 @@ const OrderDetailScreen = ({ route, navigation }) => {
       {/* Botón personalizado para volver */}
       <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back-circle" size={32} color={colors.teal600} />
-        <Text style={styles.backText}>Volver</Text>
+        <Text style={styles.backText}>Back</Text>
       </Pressable>
 
-      <Text style={styles.title}>Fecha del pedido</Text>
+      <Text style={styles.title}>Order Date</Text>
       <Text style={styles.text}>{new Date(order.createdAt).toLocaleString()}</Text>
 
-      <Text style={styles.title}>Productos:</Text>
+      <Text style={styles.title}>Products:</Text>
       <FlatList
         data={order.items}
         keyExtractor={(item) => item.id}
