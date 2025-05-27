@@ -1,27 +1,39 @@
-import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-
+import { FlatList, StyleSheet, ActivityIndicator, Text, View } from 'react-native'
 import { colors } from '../global/colors'
-// import categories from '../data/categories.json'
 import CategoryItem from '../components/CategoryItem'
-import Counter from '../components/Counter'
+//import Counter from '../components/Counter'
 import { useGetCategoriesQuery } from '../services/shopServices'
 
 const Home = ({ route, navigation }) => {
-  const {data:categories, error, isLoading } = useGetCategoriesQuery();
+  const {data: categories, error, isLoading } = useGetCategoriesQuery();
+
+  if (isLoading) {
+    return (
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color={colors.teal900} />
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorText}>Error al cargar categorías.</Text>
+      </View>
+    )
+  }
 
   return (
-    <View style={styles.flatListContainer}>
+    <View style={styles.container}>
       {/* <Counter /> */}
       <FlatList
         showsVerticalScrollIndicator={false}
         data={categories}
-        renderItem={({ item }) => 
-          <CategoryItem 
-            category={item} 
-            navigation = {navigation} 
-          />}
         keyExtractor={(itemElement) => itemElement}
+        renderItem={({ item }) => (
+          <CategoryItem category={item} navigation = {navigation} />
+        )}
+        contentContainerStyle={styles.flatListContent}
       />
     </View>
   );
@@ -30,13 +42,34 @@ const Home = ({ route, navigation }) => {
 export default Home
 
 const styles = StyleSheet.create({
-  flatListContainer: {
-    width: "100%",
+  container: {
+    flex: 1,
     backgroundColor: colors.teal400,
-    height: "100%",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 10,
+    paddingHorizontal: 16,
+    paddingTop: 16,
   },
-});
+  listContent: {
+    paddingBottom: 16,
+  },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.teal400,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    backgroundColor: colors.teal400,
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 16,
+  },
+  flatListContent: {
+  alignItems: "center",
+  paddingVertical: 20,
+},
+})
