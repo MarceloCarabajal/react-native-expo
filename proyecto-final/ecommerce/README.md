@@ -58,7 +58,7 @@ EXPO_PUBLIC_GOOGLE_MAPS_API_KEY=TU_CLAVE_DE_MAPS
 
 # Firebase Auth REST API
 EXPO_PUBLIC_FIREBASE_API_KEY=TU_API_KEY_FIREBASE
-EXPO_PUBLIC_FIREBAE_AUTH_URL=https://identitytoolkit.googleapis.com/v1
+EXPO_PUBLIC_FIREBASE_AUTH_URL=https://identitytoolkit.googleapis.com/v1
 
 # Firebase Realtime Database
 EXPO_PUBLIC_REALTIME_DATABASE_URL=https://<project>.firebaseio.com/
