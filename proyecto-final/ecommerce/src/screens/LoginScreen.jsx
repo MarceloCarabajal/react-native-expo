@@ -17,12 +17,15 @@ import { useSignInMutation } from "../services/authService";
 import { setUser } from "../features/User/userSlice";
 import { useSession } from "../hooks/useSession";
 import { loginSchema } from "../validations/authSchema";
+import { useTheme } from "../hooks/useTheme";
+import ThemeToggleButton from "../components/ThemeToggleButton";
 // import { useDb } from '../hooks/useDb';
 
 const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const [triggerSignIn, result] = useSignInMutation();
   const { insertSession } = useSession();
+  const { isDarkMode } = useTheme();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -30,7 +33,6 @@ const LoginScreen = ({ navigation }) => {
   const [errorMail, setErrorMail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
 
   useEffect(() => {
     if (result.isSuccess) {
@@ -143,18 +145,49 @@ const LoginScreen = ({ navigation }) => {
   }
 
   return (
-    <View style={styles.main}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Login to start</Text>
-        <InputForm label={"email"} onChange={handleEmailChange} error={errorMail} />
+    <View
+      style={[
+        styles.main,
+        { backgroundColor: isDarkMode ? colors.teal900 : colors.teal100 },
+      ]}
+    >
+      <View
+        style={[
+          styles.container,
+          { backgroundColor: isDarkMode ? colors.gray900 : colors.platinum },
+        ]}
+      >
+        <Text
+          style={[
+            styles.title,
+            { color: isDarkMode ? colors.white : colors.teal900 },
+          ]}
+        >
+          Login to start
+        </Text>
+        <InputForm
+          label={"email"}
+          onChange={handleEmailChange}
+          error={errorMail}
+          isDarkMode={isDarkMode}
+        ></InputForm>
         <InputForm
           label={"password"}
           onChange={handlePasswordChange}
           error={errorPassword}
           isSecure={true}
+          isDarkMode={isDarkMode}
         />
-        <SubmitButton onPress={onSubmit} title="Send" />
-        <Text style={styles.sub}>Not have an account?</Text>
+        <SubmitButton onPress={onSubmit} title="Send" isDarkMode={isDarkMode} />
+        <ThemeToggleButton />
+        <Text
+          style={[
+            styles.sub,
+            { color: isDarkMode ? colors.white : colors.teal900 },
+          ]}
+        >
+          Not have an account?
+        </Text>
         <Pressable onPress={() => navigation.navigate("Signup")}>
           <Text style={styles.subLink}>Sign up</Text>
         </Pressable>
@@ -165,17 +198,14 @@ const LoginScreen = ({ navigation }) => {
 
 export default LoginScreen;
 
-// Estilo modernizado para LoginScreen
 const styles = StyleSheet.create({
   main: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.teal100,
   },
   container: {
     width: "85%",
-    backgroundColor: colors.platinum,
     padding: 30,
     borderRadius: 20,
     alignItems: "center",
@@ -189,12 +219,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontFamily: "Josefin",
-    color: colors.teal900,
     marginBottom: 10,
   },
   sub: {
     fontSize: 14,
-    color: colors.teal900,
   },
   subLink: {
     fontSize: 14,

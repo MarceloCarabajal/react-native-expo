@@ -1,20 +1,46 @@
-/* export const colors = {
-    primary: '#FF6347', // Tomato
-    secondary: '#4682B4', // SteelBlue
-    background: '#F5F5F5', // LightGray
-    text: '#333333', // DarkGray
-    border: '#DDDDDD', // LightGray
-    accent: '#FFD700', // Gold
-    error: '#FF4500', // OrangeRed
-    success: '#32CD32', // LimeGreen
-    warning: '#FFA500', // Orange
-    info: '#1E90FF', // DodgerBlue
-} */
+// export const colors = {
+//   teal900: "#00363a",     // Verde azulado profundo y sofisticado
+//   teal600: "#00595e",     // Verde azulado medio con vibración moderna
+//   teal400: "#00838d",     // Verde azulado brillante y contemporáneo
+//   teal200: "#80d8d8",     // Verde azulado claro y fresco
+//   platinum: "#f5f7fa",    // Plata ultrabrillante y minimalista
+// };
 
 export const colors = {
-  teal900: "#00363a",     // Verde azulado profundo y sofisticado
-  teal600: "#00595e",     // Verde azulado medio con vibración moderna
-  teal400: "#00838d",     // Verde azulado brillante y contemporáneo
-  teal200: "#80d8d8",     // Verde azulado claro y fresco
-  platinum: "#f5f7fa",    // Plata ultrabrillante y minimalista
+  // Colores base
+  white: "#ffffff",
+  black: "#000000",
+  blue400: "#42a5f5",
+
+  // Tonos teal
+  teal900: "#00363a", // Oscuro
+  teal600: "#00595e",
+  teal400: "#00838d",
+  teal200: "#80d8d8",
+  teal100: "#e0f7fa", // Clarito para fondo claro (nuevo)
+
+  // Conservamos platinum
+  platinum: "#f5f7fa",
+
+  // Tonos grises oscuros para modo oscuro
+  gray900: "#1e1e1e",
+  gray800: "#2c2c2c",
+
+  // Temas dinámicos si querés usarlos en un futuro
+  light: {
+    background: "#f5f7fa", // platinum
+    card: "#ffffff",
+    text: "#00363a",        // teal900
+    border: "#ccc",
+    inputBackground: "#ffffff",
+  },
+  dark: {
+    background: "#121212",
+    card: "#1e1e1e",        // gray900
+    text: "#f5f7fa",        // platinum
+    border: "#444",
+    inputBackground: "#2c2c2c", // gray800
+  },
 };
+
+
