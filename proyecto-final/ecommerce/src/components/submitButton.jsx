@@ -1,20 +1,21 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 import React from "react";
-import { colors } from "../global/colors";
+import { useTheme } from "../hooks/useTheme";
 
-const SubmitButton = ({ onPress, title, isDarkMode }) => {
+const SubmitButton = ({ onPress, title }) => {
+    const { isDarkMode, theme } = useTheme();
   return (
     <Pressable
       onPress={onPress}
       style={[
         styles.button,
-        { backgroundColor: isDarkMode ? colors.teal200 : colors.teal600 },
+        { backgroundColor: theme.buttonBackground },
       ]}
     >
       <Text
         style={[
           styles.text,
-          { color: isDarkMode ? colors.teal900 : colors.platinum },
+          { color: theme.buttonText },
         ]}
       >
         {title}
@@ -27,7 +28,6 @@ export default SubmitButton;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.teal600,
     borderRadius: 6,
     justifyContent: "center",
     alignItems: "center",

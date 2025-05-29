@@ -1,33 +1,35 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
-import { colors } from "../global/colors";
+import { useTheme } from "../hooks/useTheme";
 
 const InputForm = ({ 
     label, 
     onChange, 
     error = "", 
     isSecure = false,
-    isDarkMode, 
 }) => {
+  const { isDarkMode, theme } = useTheme();
   const [input, setInput] = useState("");
+  
   const onChangeText = (text) => {
     setInput(text);
     onChange(text);
   };
   return (
     <View style={styles.inputContainer}>
-      <Text style={[styles.subtitle, {color: isDarkMode ? colors.white : colors.teal900}]}>{label}</Text>
+      <Text style={[styles.subtitle, {color: theme.text}]}>{label}</Text>
       <TextInput
         style={[styles.input, 
             {
-                color: isDarkMode ? colors.white : colors.teal900,
-                borderBlockColor: isDarkMode ? colors.teal200 : colors.teal400,
+                color: theme.text,
+                borderBlockColor: theme.inputBackground,
+                backgroundColor: theme.inputBackground,
             },
         ]}
         value={input}
         onChangeText={onChangeText}
         secureTextEntry={isSecure}
-        placeholderTextColor={isDarkMode ? colors.teal200 : colors.teal600}
+        placeholderTextColor={theme.secondaryText}
       />
       {error ? (
         <Text style={styles.error}>
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     fontFamily: "Josefin",
   },
   error: {
-    paddintTop: 2,
+    paddingTop: 2,
     fontSize: 16,
     color: "red",
     fontFamily: "Josefin",
@@ -61,9 +63,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "90%",
-    borderWidth: 0,
     borderBottomWidth: 3,
-    borderBottomColor: colors.teal400,
     padding: 2,
     fontFamily: "Josefin",
     fontSize: 14,

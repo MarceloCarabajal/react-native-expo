@@ -3,11 +3,8 @@ import {
   Text,
   View,
   Pressable,
-  Alert,
-  ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { colors } from "../global/colors";
 
 import InputForm from "../components/inputForm";
 import SubmitButton from "../components/submitButton";
@@ -16,8 +13,11 @@ import { useDispatch } from "react-redux";
 import { useSignUpMutation } from "../services/authService";
 import { signUpSchema } from "../validations/authSchema";
 import { setUser } from "../features/User/userSlice";
+import { useTheme } from "../hooks/useTheme";
 
 const SignupScreen = ({ navigation }) => {
+  const { isDarkMode, theme } = useTheme();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -127,9 +127,9 @@ const SignupScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.main}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Signup</Text>
+    <View style={[styles.main, { backgroundColor: theme.screenBackground }]}>
+      <View style={[styles.container, { backgroundColor: theme.cardBackground }]}>
+        <Text style={[styles.title, { color: theme.text }]}>Signup</Text>
 
         <InputForm label={"email"} onChange={handleEmailChange} error={errorMail} />
         <InputForm
@@ -145,9 +145,13 @@ const SignupScreen = ({ navigation }) => {
           isSecure={true}
         />
         <SubmitButton onPress={onSubmit} title="Send" />
-        <Text style={styles.sub}>Already have an account?</Text>
+        <Text style={[styles.sub, { color: theme.text }]}>
+          Already have an account?
+        </Text>
         <Pressable onPress={() => navigation.navigate("Login")}>
-          <Text style={styles.subLink}>Login</Text>
+          <Text style={[styles.subLink, { color: theme.text }]}>
+            Login
+          </Text>
         </Pressable>
       </View>
     </View>
@@ -156,17 +160,14 @@ const SignupScreen = ({ navigation }) => {
 
 export default SignupScreen;
 
-// Estilo modernizado para SignupScreen
 const styles = StyleSheet.create({
   main: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.teal50,
   },
   container: {
     width: "85%",
-    backgroundColor: colors.platinum,
     padding: 30,
     borderRadius: 20,
     alignItems: "center",
@@ -180,16 +181,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontFamily: "Josefin",
-    color: colors.teal800,
     marginBottom: 10,
   },
   sub: {
     fontSize: 14,
-    color: colors.teal900,
   },
   subLink: {
     fontSize: 14,
-    color: colors.blue400,
     fontWeight: "bold",
     textDecorationLine: "underline",
   },

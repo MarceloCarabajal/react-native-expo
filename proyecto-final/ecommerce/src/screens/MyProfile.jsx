@@ -23,9 +23,9 @@ const MyProfile = ({ navigation }) => {
     const profileImage = imageFromDB?.image || imageCamera || defaultImage
 
     const signOut = () => {
-        Alert.alert("Cerrar sesión", "¿Estás seguro de que quieres cerrar sesión?", [
-            { text: "Cancelar", style: "cancel" },
-            { text: "Salir", style: "destructive", onPress: () => {
+        Alert.alert("Logout", "¿Are you sure you want to log out?", [
+            { text: "Cancel", style: "cancel" },
+            { text: "Yes", style: "destructive", onPress: () => {
                 truncateSessionTable()
                 dispatch(clearUser())
             }}
@@ -53,12 +53,12 @@ const MyProfile = ({ navigation }) => {
 
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('List Address')}>
             <Ionicons name="location-outline" size={20} color="white" />
-            <Text style={styles.buttonText}>Mis Direcciones</Text>
+            <Text style={styles.buttonText}>My Locations</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={[styles.button, styles.logoutButton]} onPress={signOut}>
             <Ionicons name="log-out-outline" size={20} color="white" />
-            <Text style={styles.buttonText}>Cerrar Sesión</Text>
+            <Text style={styles.buttonText}>Sign Out</Text>
         </TouchableOpacity>
         </View>
   )

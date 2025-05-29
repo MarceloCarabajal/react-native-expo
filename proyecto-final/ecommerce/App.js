@@ -1,39 +1,64 @@
 import { StyleSheet, View, Platform, StatusBar, SafeAreaView } from 'react-native';
 import { useEffect } from 'react';
-import { colors } from './src/global/colors';
+// import { colors } from './src/global/colors';
+
+import { getTheme } from './src/global/theme';
 import { useFonts } from 'expo-font';
 import Navigator from './src/navigation/Navigator';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import store from './src/store';
 import { useSession } from './src/hooks/useSession';
 // import { useDb } from './src/hooks/useDb';
 import Toast from 'react-native-toast-message';
+import { setDarkMode } from './src/features/Theme/themeSlice';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const Main = () => {
+  const { initDB } = useSession();
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  const theme = getTheme(isDarkMode);
+
+  useEffect(() => {
+    initDB();
+  }, [])
+
+  return (
+    <SafeAreaView
+      style={[
+        styles.container,
+        { backgroundColor: theme.screenBackground }
+      ]}
+    >
+      <Navigator />
+      <Toast />
+    </SafeAreaView>
+  )
+}
 
 const App = () => {
-  const { initDB } = useSession();
   const [fontsLoaded, fontError] = useFonts({
     Josefin: require('./assets/JosefinSans-Regular.ttf'),
   })
 
-  useEffect(() => {
-    initDB()
-  }, [])
+    useEffect(() => {
+    const loadTheme = async () => {
+      const storedTheme = await AsyncStorage.getItem("theme");
+      if (storedTheme !== null) {
+        store.dispatch(setDarkMode(JSON.parse(storedTheme)));
+      }
+    };
+    loadTheme();
+  }, []);
 
   if(!fontsLoaded || fontError) {
     return null;
   } 
 
-  if (fontsLoaded && !fontError) {
-    return (
-      <SafeAreaView style={styles.container}>
-      <Provider store={store}>
-        <Navigator />
-        <Toast />
-      </Provider>
-      </SafeAreaView>
-    );
-  }
+  return (
+    <Provider store={store}>
+      <Main />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -41,7 +66,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     //alignItems: "center", // el problema de la clase pasada
-    backgroundColor: colors.teal200
   },
 });
 

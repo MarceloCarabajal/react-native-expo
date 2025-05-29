@@ -6,11 +6,12 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
-import { colors } from "../global/colors";
+// import { colors } from "../global/colors";
 import React, { useEffect, useState } from "react";
 
 import InputForm from "../components/inputForm";
 import SubmitButton from "../components/submitButton";
+import ThemeToggleButton from "../components/ThemeToggleButton";
 
 import { useDispatch } from "react-redux";
 import { useSignInMutation } from "../services/authService";
@@ -18,14 +19,14 @@ import { setUser } from "../features/User/userSlice";
 import { useSession } from "../hooks/useSession";
 import { loginSchema } from "../validations/authSchema";
 import { useTheme } from "../hooks/useTheme";
-import ThemeToggleButton from "../components/ThemeToggleButton";
 // import { useDb } from '../hooks/useDb';
 
 const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const [triggerSignIn, result] = useSignInMutation();
   const { insertSession } = useSession();
-  const { isDarkMode } = useTheme();
+
+  const { isDarkMode, theme } = useTheme();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -70,29 +71,10 @@ const LoginScreen = ({ navigation }) => {
   // 🔍 Validación en tiempo real
   const validateField = async (field, value) => {
     try {
-      await loginSchema.validateAt(field, {
-        email,
-        password,
-        [field]: value,
-      });
-
-      switch (field) {
-        case "email":
-          setErrorMail("");
-          break;
-        case "password":
-          setErrorPassword("");
-          break;
-      }
+      await loginSchema.validateAt(field, { email, password, [field]: value });
+      field === "email" ? setErrorMail("") : setErrorPassword("");
     } catch (error) {
-      switch (field) {
-        case "email":
-          setErrorMail(error.message);
-          break;
-        case "password":
-          setErrorPassword(error.message);
-          break;
-      }
+      field === "email" ? setErrorMail(error.message) : setErrorPassword(error.message);
     }
   };
 
@@ -108,88 +90,48 @@ const LoginScreen = ({ navigation }) => {
   };
 
   const onSubmit = () => {
-    // handle login logic here
     setErrorMail("");
     setErrorPassword("");
     setSubmitted(true);
-    // triggerSignIn({ email, password });
 
     try {
       loginSchema.validateSync({ email, password }, { abortEarly: false });
       triggerSignIn({ email, password, returnSecureToken: true });
     } catch (err) {
       setSubmitted(false);
-      if (err.inner) {
-        err.inner.forEach((error) => {
-          switch (error.path) {
-            case "email":
-              setErrorMail(error.message);
-              break;
-            case "password":
-              setErrorPassword(error.message);
-              break;
-            default:
-              console.error("Unexpected validation error:", error);
-          }
-        });
-      }
+      err.inner?.forEach((error) => {
+        if (error.path === "email") setErrorMail(error.message);
+        if (error.path === "password") setErrorPassword(error.message);
+      });
     }
   };
 
   if (result.isLoading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator size="large" color={colors.teal400} />
+        <ActivityIndicator size="large" color={theme.teal400} />
       </View>
     );
   }
 
   return (
-    <View
-      style={[
-        styles.main,
-        { backgroundColor: isDarkMode ? colors.teal900 : colors.teal100 },
-      ]}
-    >
-      <View
-        style={[
-          styles.container,
-          { backgroundColor: isDarkMode ? colors.gray900 : colors.platinum },
-        ]}
-      >
-        <Text
-          style={[
-            styles.title,
-            { color: isDarkMode ? colors.white : colors.teal900 },
-          ]}
-        >
-          Login to start
-        </Text>
-        <InputForm
-          label={"email"}
-          onChange={handleEmailChange}
-          error={errorMail}
-          isDarkMode={isDarkMode}
-        ></InputForm>
-        <InputForm
-          label={"password"}
-          onChange={handlePasswordChange}
-          error={errorPassword}
-          isSecure={true}
-          isDarkMode={isDarkMode}
-        />
-        <SubmitButton onPress={onSubmit} title="Send" isDarkMode={isDarkMode} />
+    <View style={[styles.main, { backgroundColor: theme.screenBackground }]}>
+      <View style={[styles.container, { backgroundColor: theme.cardBackground }]}>
+        <Text style={[styles.title, { color: theme.text }]}>Login to start</Text>
+
+        <InputForm label="email" onChange={handleEmailChange} error={errorMail} />
+        <InputForm label="password" onChange={handlePasswordChange} error={errorPassword} isSecure />
+
+        <SubmitButton onPress={onSubmit} title="Send" />
         <ThemeToggleButton />
-        <Text
-          style={[
-            styles.sub,
-            { color: isDarkMode ? colors.white : colors.teal900 },
-          ]}
-        >
+
+        <Text style={[styles.sub, { color: theme.text }]}>
           Not have an account?
         </Text>
         <Pressable onPress={() => navigation.navigate("Signup")}>
-          <Text style={styles.subLink}>Sign up</Text>
+          <Text style={[styles.subLink, { color: theme.text }]}>
+            Sign up
+          </Text>
         </Pressable>
       </View>
     </View>
@@ -226,7 +168,8 @@ const styles = StyleSheet.create({
   },
   subLink: {
     fontSize: 14,
-    color: colors.blue400,
+    color: "#4A90E2",
+    fontWeight: "bold",
     textDecorationLine: "underline",
   },
   centered: {

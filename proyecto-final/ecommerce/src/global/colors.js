@@ -1,11 +1,3 @@
-// export const colors = {
-//   teal900: "#00363a",     // Verde azulado profundo y sofisticado
-//   teal600: "#00595e",     // Verde azulado medio con vibración moderna
-//   teal400: "#00838d",     // Verde azulado brillante y contemporáneo
-//   teal200: "#80d8d8",     // Verde azulado claro y fresco
-//   platinum: "#f5f7fa",    // Plata ultrabrillante y minimalista
-// };
-
 export const colors = {
   // Colores base
   white: "#ffffff",
