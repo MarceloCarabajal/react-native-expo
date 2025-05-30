@@ -1,87 +1,111 @@
-import { Alert, Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useGetProfileImageQuery } from '../services/shopServices'
+import {
+  Alert,
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useGetProfileImageQuery } from "../services/shopServices";
 // import { useDb } from '../hooks/useDb'
-import { clearUser } from '../features/User/userSlice'
-import { useSession } from '../hooks/useSession'
-import { colors } from '../global/colors'
-import { Ionicons } from '@expo/vector-icons'
+import { clearUser } from "../features/User/userSlice";
+import { useSession } from "../hooks/useSession";
+import { colors } from "../global/colors";
+import { Ionicons } from "@expo/vector-icons";
+import { useTheme } from "../hooks/useTheme";
+import ThemeToggleButton from "../components/ThemeToggleButton";
 
 const MyProfile = ({ navigation }) => {
+  const { imageCamera, localId } = useSelector((state) => state.auth.value);
+  const { data: imageFromDB } = useGetProfileImageQuery(localId);
+  const { truncateSessionTable } = useSession();
+  const dispatch = useDispatch();
+  const { isDarkMode, theme } = useTheme();
 
-    const {imageCamera, localId} = useSelector((state) => state.auth.value)
-    const {data: imageFromDB} = useGetProfileImageQuery(localId)
-    const { truncateSessionTable } = useSession()
-    const dispatch = useDispatch()
+  const defaultImage = require("../../assets/images/profile-default.jpg");
+  const profileImage = imageFromDB?.image || imageCamera || defaultImage;
 
-    const launchCamera = () => {
-        navigation.navigate('Image Selector')
-    }
-
-    const defaultImage = require('../../assets/images/profile-default.jpg')
-    const profileImage = imageFromDB?.image || imageCamera || defaultImage
-
-    const signOut = () => {
-        Alert.alert("Logout", "¿Are you sure you want to log out?", [
-            { text: "Cancel", style: "cancel" },
-            { text: "Yes", style: "destructive", onPress: () => {
-                truncateSessionTable()
-                dispatch(clearUser())
-            }}
-        ])
-    }
-
-    const launchLocation = () => {
-        navigation.navigate('List Address')
-    }
-
-
+  const signOut = () => {
+    Alert.alert("Logout", "¿Are you sure you want to log out?", [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Yes",
+        style: "destructive",
+        onPress: () => {
+          truncateSessionTable();
+          dispatch(clearUser());
+        },
+      },
+    ]);
+  };
 
   return (
-    <View style={styles.container}>
-        <View style={styles.imageContainer}>
-            <Image
-            source={typeof profileImage === 'string' ? { uri: profileImage } : profileImage}
-            style={styles.image}
-            resizeMode="cover"
-            />
-            <TouchableOpacity style={styles.editIcon} onPress={() => navigation.navigate('Image Selector')}>
-            <Ionicons name="camera" size={24} color="white" />
-            </TouchableOpacity>
-        </View>
-
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('List Address')}>
-            <Ionicons name="location-outline" size={20} color="white" />
-            <Text style={styles.buttonText}>My Locations</Text>
+    <View
+      style={[styles.container, { backgroundColor: theme.screenBackground }]}
+    >
+      <View style={styles.imageContainer}>
+        <Image
+          source={
+            typeof profileImage === "string"
+              ? { uri: profileImage }
+              : profileImage
+          }
+          style={styles.image}
+          resizeMode="cover"
+        />
+        <TouchableOpacity
+          style={styles.editIcon}
+          onPress={() => navigation.navigate("Image Selector")}
+        >
+          <Ionicons name="camera" size={24} color="white" />
         </TouchableOpacity>
+      </View>
 
-        <TouchableOpacity style={[styles.button, styles.logoutButton]} onPress={signOut}>
-            <Ionicons name="log-out-outline" size={20} color="white" />
-            <Text style={styles.buttonText}>Sign Out</Text>
-        </TouchableOpacity>
-        </View>
-  )
-}
+      <ThemeToggleButton style={[styles.button, { backgroundColor: theme.buttonBackground }]} />
 
-export default MyProfile
+      <TouchableOpacity
+        style={[styles.button, { backgroundColor: theme.buttonBackground }]}
+        onPress={() => navigation.navigate("List Address")}
+      >
+        <Ionicons name="location-outline" size={20} color={theme.buttonText} />
+        <Text style={[styles.buttonText, { color: theme.buttonText }]}>
+          My Locations
+        </Text>
+      </TouchableOpacity>
 
+      <TouchableOpacity
+        style={[styles.button, { backgroundColor: theme.buttonBackground }]}
+        onPress={signOut}
+      >
+        <Ionicons name="log-out-outline" size={20} color={theme.buttonText} />
+        <Text style={[styles.buttonText, { color: theme.buttonText }]}>
+          Sign Out
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default MyProfile;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    alignItems: 'center',
-    backgroundColor: 'white',
+    alignItems: "center",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 26,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 30,
-    fontFamily: 'Josefin',
+    fontFamily: "Josefin",
   },
   imageContainer: {
-    position: 'relative',
+    position: "relative",
     marginBottom: 30,
   },
   image: {
@@ -92,7 +116,7 @@ const styles = StyleSheet.create({
     borderColor: colors.teal400,
   },
   editIcon: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 5,
     right: 5,
     backgroundColor: colors.teal400,
@@ -100,23 +124,23 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   button: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 8,
-    alignItems: 'center',
+    alignItems: "center",
     backgroundColor: colors.teal400,
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 10,
     marginVertical: 10,
-    width: '80%',
-    justifyContent: 'center',
+    width: "80%",
+    justifyContent: "center",
   },
   buttonText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   logoutButton: {
-    backgroundColor: '#e74c3c',
+    backgroundColor: "#e74c3c",
   },
-})
+});

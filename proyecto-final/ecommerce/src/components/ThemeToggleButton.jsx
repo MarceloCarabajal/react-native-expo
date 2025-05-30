@@ -1,21 +1,22 @@
 // components/ThemeToggleButton.js
 import { Pressable, Text, StyleSheet } from "react-native";
-import { useDispatch } from "react-redux";
-import { toggleTheme } from "../features/Theme/themeSlice";
 import { useTheme } from "../hooks/useTheme";
+import { getTheme } from "../global/theme";
 
 const ThemeToggleButton = () => {
-  const dispatch = useDispatch();
-  const { isDarkMode } = useTheme();
+  const { isDarkMode, toggleTheme } = useTheme();
+  const theme = getTheme(isDarkMode);
 
   return (
-    <Pressable style={styles.button} onPress={() => dispatch(toggleTheme())}>
-      <Text style={styles.text}>
+    <Pressable style={[styles.button, { backgroundColor: theme.buttonBackground }]} onPress={toggleTheme}>
+      <Text style={[styles.text, { color: theme.buttonText }]}>
         Switch to {isDarkMode ? "Light" : "Dark"} Mode
       </Text>
     </Pressable>
   );
 };
+
+export default ThemeToggleButton;
 
 const styles = StyleSheet.create({
   button: {
@@ -32,4 +33,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ThemeToggleButton;

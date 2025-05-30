@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { getTheme } from './src/global/theme';
 import { useFonts } from 'expo-font';
 import Navigator from './src/navigation/Navigator';
-import { Provider, useSelector } from 'react-redux';
+import { Provider, useSelector, useDispatch } from 'react-redux';
 import store from './src/store';
 import { useSession } from './src/hooks/useSession';
 // import { useDb } from './src/hooks/useDb';
@@ -17,10 +17,15 @@ const Main = () => {
   const { initDB } = useSession();
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
   const theme = getTheme(isDarkMode);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     initDB();
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    AsyncStorage.setItem("theme", JSON.stringify(isDarkMode))
+  }, [isDarkMode]);
 
   return (
     <SafeAreaView

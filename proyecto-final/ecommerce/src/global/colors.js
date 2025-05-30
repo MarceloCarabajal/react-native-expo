@@ -8,6 +8,7 @@ export const colors = {
   teal900: "#00363a", // Oscuro
   teal600: "#00595e",
   teal400: "#00838d",
+  teal300: "#0097a7", // Intermedio
   teal200: "#80d8d8",
   teal100: "#e0f7fa", // Clarito para fondo claro (nuevo)
 

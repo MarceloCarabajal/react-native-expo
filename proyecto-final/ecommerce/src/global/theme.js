@@ -14,8 +14,8 @@ export const getTheme = (isDarkMode) => ({
   inputBackground: isDarkMode ? colors.gray900 : colors.platinum,
 
   // Botones
-  buttonBackground: isDarkMode ? colors.teal600 : colors.teal400,
-  buttonText: colors.platinum,
+  buttonBackground: isDarkMode ? colors.teal600 : colors.teal200,
+  buttonText: isDarkMode ? colors.platinum : colors.teal900, // ← cambio clave
 
   // Enlaces
   link: colors.blue400,

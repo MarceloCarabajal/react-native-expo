@@ -3,6 +3,7 @@ import {
   Text,
   View,
   Pressable,
+  Alert,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 
@@ -30,14 +31,10 @@ const SignupScreen = ({ navigation }) => {
   const [triggerSignUp, result] = useSignUpMutation();
 
   useEffect(() => {
-    if (result?.isSuccess)
-      dispatch(
-        setUser({
-          email: result?.data?.email,
-          idToken: result?.data?.idToken,
-          localId: result?.data?.localId,
-        })
-      );
+    if (result?.isSuccess) {
+      Alert.alert("Success", "User created successfully");
+      navigation.replace("Login");
+    }
   }, [result]);
 
   const validateField = async (field, value) => {
