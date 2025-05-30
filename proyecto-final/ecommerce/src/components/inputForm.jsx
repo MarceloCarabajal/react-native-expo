@@ -16,7 +16,7 @@ const InputForm = ({
     onChange(text);
   };
   return (
-    <View style={styles.inputContainer}>
+    <View style={[styles.inputContainer, {backgroundColor: theme.background}]}>
       <Text style={[styles.subtitle, {color: theme.text}]}>{label}</Text>
       <TextInput
         style={[styles.input, 

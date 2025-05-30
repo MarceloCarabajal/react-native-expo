@@ -11,7 +11,7 @@ export const getTheme = (isDarkMode) => ({
 
   // Inputs y bordes
   border: isDarkMode ? colors.teal400 : colors.teal600,
-  inputBackground: isDarkMode ? colors.gray900 : "#fff",
+  inputBackground: isDarkMode ? colors.gray900 : colors.platinum,
 
   // Botones
   buttonBackground: isDarkMode ? colors.teal600 : colors.teal400,
