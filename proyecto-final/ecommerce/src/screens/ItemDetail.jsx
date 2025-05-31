@@ -7,15 +7,16 @@ import {
   useWindowDimensions,
   Pressable,
   ScrollView,
+  ActivityIndicator,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useGetProductByIdQuery } from '../services/shopServices';
 import { addToCart } from '../features/Cart/cartSlice';
 import { useDispatch } from 'react-redux';
-import { ActivityIndicator } from 'react-native';
 import { colors } from '../global/colors';
 import Toast from 'react-native-toast-message';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from '../hooks/useTheme';
 
 const ItemDetail = ({ navigation, route }) => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const ItemDetail = ({ navigation, route }) => {
 
   const { data: product, error, isLoading } = useGetProductByIdQuery(idSelected);
   const [quantity, setQuantity] = useState(1);
+  const { isDarkMode, theme } = useTheme();
 
   useEffect(() => {
     setOrientation(width > height ? 'landscape' : 'portrait');
@@ -44,25 +46,26 @@ const ItemDetail = ({ navigation, route }) => {
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
   const decreaseQuantity = () => quantity > 1 && setQuantity((prev) => prev - 1);
 
-  if (error) return <Text>Error loading product details.</Text>;
+  if (error) return <Text style={{ color: theme.text }}>Error loading product details.</Text>;
 
   return (
-    <>
+    <View style={[styles.wrapper, { backgroundColor: theme.screenBackground }]}>
       <Pressable
         onPress={() => navigation.goBack()}
         style={({ pressed }) => [
           styles.backButton,
-          pressed && styles.backButtonPressed,
+          { backgroundColor: theme.buttonBackground },
+          pressed && { backgroundColor: theme.secondaryText },
         ]}
       >
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <Ionicons name="arrow-back" size={20} color={colors.teal900} />
-          <Text style={[styles.backButtonText, { marginLeft: 5 }]}>Back</Text>
+          <Ionicons name="arrow-back" size={20} color={theme.text} />
+          <Text style={[styles.backButtonText, { color: theme.text, marginLeft: 5 }]}>Back</Text>
         </View>
       </Pressable>
 
       {product ? (
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: theme.screenBackground }]}>
           <ScrollView
             contentContainerStyle={
               orientation === 'portrait'
@@ -82,51 +85,53 @@ const ItemDetail = ({ navigation, route }) => {
                   : styles.textContainerLandscape
               }
             >
-              <Text style={styles.title}>{product.title}</Text>
-              <Text style={styles.description}>{product.description}</Text>
-              <Text style={styles.price}>{`$${product.price}`}</Text>
+              <Text style={[styles.title, { color: theme.text}]}>{product.title}</Text>
+              <Text style={[styles.description, { color: theme.border }]}>
+                {product.description}
+              </Text>
+              <Text style={[styles.price, { color: theme.text }]}>
+                {`$${product.price}`}
+                </Text>
             </View>
           </ScrollView>
 
           {/* Botón fijo abajo */}
-          <View style={styles.bottomBar}>
+          <View style={[styles.bottomBar, { backgroundColor: theme.screenBackground, borderTopColor: theme.border }]}>
             <View style={styles.quantityContainer}>
-              <Pressable onPress={decreaseQuantity} style={styles.quantityButton}>
-                <Text style={styles.quantityButtonText}>−</Text>
+              <Pressable onPress={decreaseQuantity} style={[styles.quantityButton, { backgroundColor: theme.buttonBackground }]}>
+                <Text style={[styles.quantityButtonText, { color: theme.buttonText }]}>−</Text>
               </Pressable>
-              <Text style={styles.quantityText}>{quantity}</Text>
-              <Pressable onPress={increaseQuantity} style={styles.quantityButton}>
-                <Text style={styles.quantityButtonText}>+</Text>
+              <Text style={[styles.quantityText, { color: theme.text}]}>{quantity}</Text>
+              <Pressable onPress={increaseQuantity} style={[styles.quantityButton, { backgroundColor: theme.buttonBackground }]}>
+                <Text style={[styles.quantityButtonText, { color: theme.buttonText}]}>+</Text>
               </Pressable>
             </View>
             <Pressable
               style={({ pressed }) => [
                 styles.addButton,
+                { backgroundColor: theme.buttonBackground },
                 pressed && styles.addButtonPressed,
               ]}
               onPress={handleAddToCart}
             >
-              <Text style={styles.addButtonText}>Add to cart</Text>
+              <Text style={[styles.addButtonText, { color: theme.buttonText }]}>Add to cart</Text>
             </Pressable>
           </View>
         </View>
       ) : (
-        <ActivityIndicator size="large" color={colors.teal600} />
+        <ActivityIndicator size="large" color={theme.border} />
       )}
-    </>
+    </View>
   );
 };
 
 export default ItemDetail;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.platinum,
-  },
+  container: { flex: 1 },
   mainContainer: {
     padding: 20,
-    paddingBottom: 130, // espacio para el botón fijo
+    paddingBottom: 130,
   },
   mainContainerLandscape: {
     flexDirection: 'row',
@@ -143,9 +148,7 @@ const styles = StyleSheet.create({
     width: '45%',
     height: 200,
   },
-  textContainer: {
-    flexDirection: 'column',
-  },
+  textContainer: { flexDirection: 'column' },
   textContainerLandscape: {
     width: '50%',
     flexDirection: 'column',
@@ -155,12 +158,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: colors.teal900,
     marginBottom: 10,
   },
   description: {
     fontSize: 16,
-    color: colors.teal600,
     marginBottom: 10,
   },
   price: {
@@ -169,85 +170,72 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     marginVertical: 10,
-    color: colors.teal400,
   },
   bottomBar: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: colors.platinum,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderTopWidth: 1,
-    borderTopColor: colors.teal200,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    borderTopWidth: 1,
   },
   quantityContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   quantityButton: {
-    backgroundColor: colors.teal600,
     paddingHorizontal: 12,
     paddingVertical: 5,
     borderRadius: 5,
     marginHorizontal: 5,
   },
   quantityButtonText: {
-    color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
   },
   quantityText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: colors.teal900,
   },
   addButton: {
-  backgroundColor: colors.teal600,
-  paddingVertical: 12,
-  paddingHorizontal: 20,
-  borderRadius: 8,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.25,
-  shadowRadius: 4,
-  elevation: 5, // para Android
-},
-addButtonPressed: {
-  backgroundColor: colors.teal700,
-},
-addButtonText: {
-  color: 'white',
-  fontSize: 16,
-  fontWeight: 'bold',
-  textAlign: 'center',
-  
-},
-backButton: {
-  alignSelf: 'flex-start',
-  backgroundColor: colors.teal200,
-  paddingVertical: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  addButtonPressed: {},
+  addButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  backButton: {
+    alignSelf: 'flex-start',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    marginBottom: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  backButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  wrapper: {
+  flex: 1,
   paddingHorizontal: 16,
-  borderRadius: 8,
-  marginBottom: 10,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.2,
-  shadowRadius: 4,
-  elevation: 3,
+  paddingTop: 10,
 },
-backButtonPressed: {
-  backgroundColor: colors.teal300,
-},
-backButtonText: {
-  fontSize: 16,
-  color: colors.teal900,
-  fontWeight: 'bold',
-},
-
-
 });
