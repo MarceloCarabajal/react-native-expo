@@ -3,28 +3,30 @@ import { colors } from '../global/colors'
 import CategoryItem from '../components/CategoryItem'
 //import Counter from '../components/Counter'
 import { useGetCategoriesQuery } from '../services/shopServices'
+import { useTheme } from '../hooks/useTheme'
 
 const Home = ({ route, navigation }) => {
   const {data: categories, error, isLoading } = useGetCategoriesQuery();
+  const { theme } = useTheme();
 
   if (isLoading) {
     return (
-      <View style={styles.loaderContainer}>
-        <ActivityIndicator size="large" color={colors.teal900} />
+      <View style={[styles.loaderContainer, { backgroundColor: theme.screenBackground }]}>
+        <ActivityIndicator size="large" color={theme.text} />
       </View>
     );
   }
 
   if (error) {
     return (
-      <View style={styles.errorContainer}>
-        <Text style={styles.errorText}>Error al cargar categorías.</Text>
+      <View style={[styles.errorContainer, { backgroundColor: theme.screenBackground }]}>
+        <Text style={[styles.errorText, { color: theme.text }]}>Error al cargar categorías.</Text>
       </View>
     )
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.screenBackground }]}>
       {/* <Counter /> */}
       <FlatList
         showsVerticalScrollIndicator={false}

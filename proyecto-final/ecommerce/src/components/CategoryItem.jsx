@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
-import React from 'react'
 import Card from './Card'
-import { colors } from "../global/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategorySelected } from "../features/Shop/shopSlice";
+import { useTheme } from "../hooks/useTheme";
 
 const CategoryItem = ({ category, navigation }) => {
   const dispatch = useDispatch()
+  const { theme } = useTheme();
 
   const handleNavigate = () => {
     dispatch(setCategorySelected(category))
@@ -14,11 +14,16 @@ const CategoryItem = ({ category, navigation }) => {
   }
 
   return (
-    <Card style={styles.card} >
+    <Card style={[styles.card, { backgroundColor: theme.buttonBackground}]} >
       <Pressable 
         onPress={handleNavigate}
+        style={({ pressed }) => [
+          styles.pressable,
+          { backgroundColor: theme.buttonBackground },
+          pressed && styles.pressed,
+        ]}
       >
-        <Text style={styles.text}>{category}</Text>
+        <Text style={[styles.text, { color: theme.buttonText }]}>{category}</Text>
       </Pressable>
     </Card>
   );
@@ -30,13 +35,12 @@ const styles = StyleSheet.create({
   card: {
     marginVertical: 10,
     marginHorizontal: 16,
-    borderRadius: 12,
-    overflow: 'hidden', // importante para ripple en Android
+    borderRadius: 20,
+    overflow: 'hidden',
   },
   pressable: {
-    paddingVertical: 20,
+    paddingVertical: 10,
     paddingHorizontal: 16,
-    backgroundColor: colors.teal600,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -44,9 +48,8 @@ const styles = StyleSheet.create({
     opacity: 0.85,
   },
   text: {
-    fontSize: 20,
-    color: colors.platinum,
+    fontSize: 18,
     fontWeight: '600',
     textTransform: 'capitalize',
   },
-})
+});
