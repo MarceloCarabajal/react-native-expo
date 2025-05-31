@@ -4,14 +4,12 @@ import Card from "./Card";
 import { colors } from "../global/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { setIdSelected } from "../features/Shop/shopSlice";
+import { useTheme } from "../hooks/useTheme";
 
-const ProductItem = ({ 
-  product, 
-  navigation,
-  route,
-}) => {
+const ProductItem = ({ product, navigation, route }) => {
 
   const dispatch = useDispatch();
+  const { isDarkMode, theme } = useTheme();
 
   const handleNavigate = () => {
     dispatch(setIdSelected(product.id));
@@ -20,7 +18,7 @@ const ProductItem = ({
   return (
     <Card style={styles.additionalStylesCard}>
       <Pressable style={styles.pressable} onPress= {handleNavigate} >
-        <Text style={styles.textCategory}>{product.title}</Text>
+        <Text style={[styles.textCategory, { color: theme.text }]}>{product.title}</Text>
         <Image
           resizeMode="cover"
           style={styles.image}

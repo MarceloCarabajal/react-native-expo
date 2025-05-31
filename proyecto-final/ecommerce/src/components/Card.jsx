@@ -1,11 +1,13 @@
 import { StyleSheet,View } from 'react-native'
 import React from 'react'
-import { colors } from '../global/colors'
+import { useTheme } from '../hooks/useTheme'
 
-const Card = ({children, style}) => {
+const Card = ({ children, style }) => {
     //console.log(children)
+  const { theme } = useTheme();
+
   return (
-    <View style={{...styles.container, ...style}}>
+    <View style={[styles.container, style, { backgroundColor: theme.cardBackground }]}>
       {children}
     </View>
   )
@@ -15,19 +17,17 @@ export default Card
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.teal600,
     width: 250,
-    height: 40,
-    shadowColor: colors.platinum,
-    shadowOffset: {
-      width: 4,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-    elevation: 4,
-    marginRight: 10,
+    minHeight: 40,
+    padding: 10,
+    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+
+    shadowColor: "#000",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    elevation: 4,
   },
 });
