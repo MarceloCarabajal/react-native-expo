@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import HomeStackNavigator from './HomeStackNavitagor'
@@ -15,7 +14,9 @@ import Entypo from '@expo/vector-icons/Entypo';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Platform } from 'react-native'
+
 import { useSelector } from 'react-redux'
+import { useTheme } from '../hooks/useTheme'
 
 const Tab = createBottomTabNavigator()
 
@@ -24,27 +25,29 @@ const BottomTabNavigator = () => {
   const cartItems = useSelector((state) => state.cart.value.items)
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0)
 
+  const { theme } = useTheme()
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         header: () => <Header route={route} />,
         tabBarShowLabel: false,
-        tabBarStyle: styles.tabBar,
-        tabBarActiveTintColor: colors.teal900,
-        tabBarInactiveTintColor: colors.teal400,
+        tabBarStyle: [styles.tabBar, { backgroundColor: theme.cardBackground }],
+        tabBarActiveTintColor: theme.text,
+        tabBarInactiveTintColor: theme.secondaryText,
       })}
     >
       <Tab.Screen
         name="Football Jersey eCommerce App"
         component={HomeStackNavigator}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: ({ focused, color }) => {
             return (
               <View style={styles.iconContainer}>
                 <FontAwesome5
                   name="store"
                   size={24}
-                  color={focused ? colors.teal900 : colors.teal400}
+                  color={focused ? theme.text : theme.secondaryText}
                 />
               </View>
             );
@@ -60,7 +63,7 @@ const BottomTabNavigator = () => {
               <Entypo
                 name="shopping-cart"
                 size={24}
-                color={focused ? colors.teal900 : colors.teal400}
+                color={focused ? theme.text : theme.secondaryText}
               />
               {totalItems > 0 && (
                 <View style={styles.badge}>
@@ -81,7 +84,7 @@ const BottomTabNavigator = () => {
                 <FontAwesome6 
                   name="receipt" 
                   size={24} 
-                  color={focused ? colors.teal900 : colors.teal400} 
+                  color={focused ? theme.text : theme.secondaryText} 
                 />
               </View>
             )
@@ -98,7 +101,7 @@ const BottomTabNavigator = () => {
                 <Ionicons 
                   name="person-circle" 
                   size={30} 
-                  color={focused? colors.teal900 : colors.teal400}
+                  color={focused? theme.text : theme.secondaryText}
                 />
               </View>
             )
@@ -113,21 +116,15 @@ export default BottomTabNavigator
 
 const styles = StyleSheet.create({
   tabBar: {
-  backgroundColor: colors.teal200,
-  height: 70,
-  borderTopLeftRadius: 20,
-  borderTopRightRadius: 20,
-  paddingBottom: Platform.OS === 'ios' ? 20 : 10,
-  // 👇 Quitamos posicionamiento flotante
-  // position: 'absolute',
-  // bottom: Platform.OS === 'ios' ? 20 : 10,
-  // left: 20,
-  // right: 20,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 8 },
-  shadowOpacity: 0.1,
-  shadowRadius: 8,
-  elevation: 10,
+    height: 70,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingBottom: Platform.OS === 'ios' ? 20 : 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 10,
   },
   iconContainer: {
     alignItems: 'center',
@@ -137,22 +134,22 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   badge: {
-  position: 'absolute',
-  top: 5,             // antes estaba en -5
-  right: 5,           // antes estaba en -10
-  backgroundColor: 'red',
-  borderRadius: 10,
-  paddingHorizontal: 5,
-  minWidth: 18,
-  height: 18,
-  alignItems: 'center',
-  justifyContent: 'center',
-  zIndex: 1,
-},
+    position: 'absolute',
+    top: 5,
+    right: 5,
+    backgroundColor: 'red',
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    minWidth: 18,
+    height: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
+  },
   badgeText: {
-  color: 'white',
-  fontSize: 11,
-  fontWeight: 'bold',
-  textAlign: 'center',
-},
+    color: 'white',
+    fontSize: 11,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 })

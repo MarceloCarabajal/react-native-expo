@@ -1,5 +1,3 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import MyProfile from '../screens/MyProfile'
 import ImageSelector from '../screens/ImageSelector'
@@ -25,5 +23,3 @@ const MyProfileStackNavigator = () => {
 }
 
 export default MyProfileStackNavigator
-
-const styles = StyleSheet.create({})

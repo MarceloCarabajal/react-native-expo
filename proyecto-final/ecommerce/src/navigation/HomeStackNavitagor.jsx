@@ -1,6 +1,4 @@
-import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
 import Home from '../screens/Home'
 import ItemListCategory from '../screens/ItemListCategory'
 import ItemDetail from '../screens/ItemDetail'
@@ -8,7 +6,6 @@ import ItemDetail from '../screens/ItemDetail'
 const Stack = createNativeStackNavigator()
 
 const HomeStackNavigator = () => {
-  //console.log(navigation);
   return (
     <Stack.Navigator 
       initialRouteName="Home" 
