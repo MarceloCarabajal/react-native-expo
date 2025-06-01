@@ -82,7 +82,7 @@ const CartScreen = () => {
             style={[
               styles.checkoutButton,
               {
-                backgroundColor: CartData.length === 0 ? '#444' : theme.buttonBackground,
+                backgroundColor: CartData.length === 0 ? '#ccc' : theme.buttonBackground,
               },
             ]}
             onPress={onConfirmOrder}
