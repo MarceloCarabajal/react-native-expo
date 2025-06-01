@@ -3,7 +3,6 @@ import { useTheme } from "../hooks/useTheme";
 
 const Header = ({ route, navigation }) => {
   const { height, width } = useWindowDimensions();
-  const { name } = route.name;
   const { theme } = useTheme();
 
   return (
@@ -14,7 +13,7 @@ const Header = ({ route, navigation }) => {
           { color: theme.text },
         ]}
       >
-        {route.name}
+        { route.name }
       </Text>
     </View>
   );
