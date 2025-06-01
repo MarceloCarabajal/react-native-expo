@@ -117,8 +117,7 @@ export default BottomTabNavigator
 const styles = StyleSheet.create({
   tabBar: {
     height: 70,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+
     paddingBottom: Platform.OS === 'ios' ? 20 : 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 8 },
