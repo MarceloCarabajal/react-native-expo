@@ -31,7 +31,7 @@ const OrderDetailScreen = ({ route, navigation }) => {
     <View style={[styles.container, { backgroundColor: theme.screenBackground }]}>
       {/* Botón personalizado para volver */}
       <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back-circle" size={32} color={theme.buttonBackground} />
+        <Ionicons name="arrow-back-circle" size={32} color={theme.border} />
         <Text style={[styles.backText, { color: theme.text }]}>Back</Text>
       </Pressable>
 
