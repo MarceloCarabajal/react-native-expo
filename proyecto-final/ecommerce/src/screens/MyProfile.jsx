@@ -46,6 +46,9 @@ const MyProfile = ({ navigation }) => {
     <View
       style={[styles.container, { backgroundColor: theme.screenBackground }]}
     >
+      <View style={styles.topRightIcon} >
+        <ThemeToggleButton  />
+      </View>
       <View style={styles.imageContainer}>
         <Image
           source={
@@ -64,7 +67,7 @@ const MyProfile = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <ThemeToggleButton style={[styles.button, { backgroundColor: theme.buttonBackground }]} />
+      
 
       <TouchableOpacity
         style={[styles.button, { backgroundColor: theme.buttonBackground }]}
@@ -143,4 +146,10 @@ const styles = StyleSheet.create({
   logoutButton: {
     backgroundColor: "#e74c3c",
   },
+  topRightIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    zIndex: 1,
+  }
 });

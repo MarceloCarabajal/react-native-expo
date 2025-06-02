@@ -6,13 +6,9 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
-// import { colors } from "../global/colors";
 import React, { useEffect, useState } from "react";
-
 import InputForm from "../components/inputForm";
 import SubmitButton from "../components/submitButton";
-import ThemeToggleButton from "../components/ThemeToggleButton";
-
 import { useDispatch } from "react-redux";
 import { useSignInMutation } from "../services/authService";
 import { setUser } from "../features/User/userSlice";
@@ -25,16 +21,16 @@ const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const [triggerSignIn, result] = useSignInMutation();
   const { insertSession } = useSession();
-
-  const { isDarkMode, theme } = useTheme();
-
+  
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
+  
   const [errorMail, setErrorMail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  const { isDarkMode, theme } = useTheme();
+  
   useEffect(() => {
     if (result.isSuccess) {
       (async () => {
@@ -52,7 +48,8 @@ const LoginScreen = ({ navigation }) => {
             })
           );
         } catch (error) {
-          console.log("Error saving session", error);
+          console.error("Error inserting session:", error);
+          Alert.alert("Error", "Failed to save session data.");
         }
       })();
     }
@@ -74,7 +71,9 @@ const LoginScreen = ({ navigation }) => {
       await loginSchema.validateAt(field, { email, password, [field]: value });
       field === "email" ? setErrorMail("") : setErrorPassword("");
     } catch (error) {
-      field === "email" ? setErrorMail(error.message) : setErrorPassword(error.message);
+      field === "email"
+        ? setErrorMail(error.message)
+        : setErrorPassword(error.message);
     }
   };
 
@@ -108,30 +107,40 @@ const LoginScreen = ({ navigation }) => {
 
   if (result.isLoading) {
     return (
-      <View style={styles.centered}>
-        <ActivityIndicator size="large" color={theme.teal400} />
+      <View style={[styles.centered, { backgroundColor: theme.screenBackground }]}>
+        <ActivityIndicator size="large" color={theme.border} />
       </View>
     );
   }
 
   return (
     <View style={[styles.main, { backgroundColor: theme.screenBackground }]}>
-      <View style={[styles.container, { backgroundColor: theme.cardBackground }]}>
-        <Text style={[styles.title, { color: theme.text }]}>Login to start</Text>
+      <View
+        style={[styles.container, { backgroundColor: theme.cardBackground }]}
+      >
+        <Text style={[styles.title, { color: theme.text }]}>
+          Login to start
+        </Text>
 
-        <InputForm label="email" onChange={handleEmailChange} error={errorMail} />
-        <InputForm label="password" onChange={handlePasswordChange} error={errorPassword} isSecure />
+        <InputForm
+          label="email"
+          onChange={handleEmailChange}
+          error={errorMail}
+        />
+        <InputForm
+          label="password"
+          onChange={handlePasswordChange}
+          error={errorPassword}
+          isSecure
+        />
 
         <SubmitButton onPress={onSubmit} title="Send" />
-        <ThemeToggleButton />
 
         <Text style={[styles.sub, { color: theme.text }]}>
           Not have an account?
         </Text>
         <Pressable onPress={() => navigation.navigate("Signup")}>
-          <Text style={[styles.subLink, { color: theme.text }]}>
-            Sign up
-          </Text>
+          <Text style={[styles.subLink, { color: theme.text }]}>Sign up</Text>
         </Pressable>
       </View>
     </View>
@@ -168,7 +177,6 @@ const styles = StyleSheet.create({
   },
   subLink: {
     fontSize: 14,
-    color: "#4A90E2",
     fontWeight: "bold",
     textDecorationLine: "underline",
   },
